@@ -35,7 +35,14 @@ io.on('connection',(socket)=>{
         console.log('Client disconnected ',socket.id)
     })
 })
+// Serve static files from the React build directory
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
-server.listen(3001,()=>{
-    console.log('server is running on port 3001')
-})
+// Serve the React app for all other routes (for client-side routing)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+});
+
+// Start the server
+const port = 5000; // Use environment variable for port or default to 5000
+app.listen(port) // Use template literal for cleaner logging
