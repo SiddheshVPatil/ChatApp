@@ -2,7 +2,7 @@ import { useState } from 'react'
 import io from 'socket.io-client'
 import Chat from './chat'
 
-const socket = io.connect("http://localhost:5000")
+const socket = io.connect("https://chatapp-74wz.onrender.com")
 
 
 
