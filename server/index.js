@@ -46,4 +46,4 @@ app.get('*', (req, res) => {
 
 // Start the server
 const port = 5000; // Use environment variable for port or default to 5000
-app.listen(port) // Use template literal for cleaner logging
+server.listen(port) // Use template literal for cleaner logging
